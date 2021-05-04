@@ -4,10 +4,8 @@
     ViewData["Title"] = "Details";
 }
 
-<h1>Details</h1>
-
 <div>
-    <h4>TScore</h4>
+    <h4>Score</h4>
     <hr />
     <dl class="row">
         <dt class = "col-sm-2">
@@ -119,16 +117,10 @@
             @Html.DisplayFor(model => model.Hole18)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Score)
+            Total Score
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.Score)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Created)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Created)
         </dd>
     </dl>
 </div>

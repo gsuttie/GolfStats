@@ -4,146 +4,539 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<h1>Lanark Golf Club Scores</h1>
 
 <p>
     <a asp-action="Create">Create New</a>
 </p>
-<table class="table">
+<table class="table" border="3">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Hole1)
+                Date
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Hole2)
+                Hole
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Hole3)
+                1
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Hole4)
+                2
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Hole5)
+                3
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Hole6)
+                4
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Hole7)
+                5
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Hole8)
+                6
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Hole9)
+                7
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Hole10)
+                8
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Hole11)
+                9
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Hole12)
+                10
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Hole13)
+                11
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Hole14)
+                12
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Hole15)
+                13
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Hole16)
+                14
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Hole17)
+                15
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Hole18)
+                16
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Score)
+                17
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Created)
+                18
             </th>
-            <th></th>
+            <th>&nbsp;</th>
+            <th>&nbsp;</th>
+        </tr>
+        <tr>
+            <th>
+            </th>
+            <th>
+                Par
+            </th>
+            <th>
+                4
+            </th>
+            <th>
+                4
+            </th>
+            <th>
+                4
+            </th>
+            <th>
+                4
+            </th>
+            <th>
+                4
+            </th>
+            <th>
+                4
+            </th>
+            <th>
+                3
+            </th>
+            <th>
+                5
+            </th>
+            <th>
+                4
+            </th>
+            <th>
+                3
+            </th>
+            <th>
+                4
+            </th>
+            <th>
+                4
+            </th>
+            <th>
+                4
+            </th>
+            <th>
+                4
+            </th>
+            <th>
+                4
+            </th>
+            <th>
+                4
+            </th>
+            <th>
+                4
+            </th>
+            <th>
+                3
+            </th>
+            <th style="text-align: right;">Total</th>
+            <th>&nbsp;</th>
+
         </tr>
     </thead>
     <tbody>
 @foreach (var item in Model) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.Hole1)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Hole2)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Hole3)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Hole4)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Hole5)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Hole6)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Hole7)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Hole8)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Hole9)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Hole10)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Hole11)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Hole12)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Hole13)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Hole14)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Hole15)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Hole16)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Hole17)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Hole18)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Score)
-            </td>
-            <td>
                 @Html.DisplayFor(modelItem => item.Created)
             </td>
+            <td>Score</td>
+            @if (item.Hole1 > 4)
+            {
+                <td style="background-color: red;">
+                    @Html.DisplayFor(modelItem => item.Hole1)
+                </td>
+            }
+            else if (item.Hole1 < 4)
+            {
+                <td style="background-color: yellow;">
+                    @Html.DisplayFor(modelItem => item.Hole1)
+                </td>
+
+            }
+            else
+            {
+                <td>
+                    @Html.DisplayFor(modelItem => item.Hole1)
+                </td>
+
+            }
+
+            @if (item.Hole2 > 4)
+            {
+                <td style="background-color: red;">
+                    @Html.DisplayFor(modelItem => item.Hole2)
+                </td>
+            }
+            else if (item.Hole2 < 4)
+            {
+                <td style="background-color: yellow;">
+                    @Html.DisplayFor(modelItem => item.Hole2)
+                </td>
+
+            }
+            else
+            {
+                <td>
+                    @Html.DisplayFor(modelItem => item.Hole2)
+                </td>
+
+            }
+
+            @if (item.Hole3 > 4)
+            {
+                <td style="background-color: red;">
+                    @Html.DisplayFor(modelItem => item.Hole3)
+                </td>
+            }
+            else if (item.Hole3 < 4)
+            {
+                <td style="background-color: yellow;">
+                    @Html.DisplayFor(modelItem => item.Hole3)
+                </td>
+
+            }
+            else
+            {
+                <td>
+                    @Html.DisplayFor(modelItem => item.Hole3)
+                </td>
+
+            }
+
+            @if (item.Hole4 > 4)
+            {
+                <td style="background-color: red;">
+                    @Html.DisplayFor(modelItem => item.Hole4)
+                </td>
+            }
+            else if (item.Hole4 < 4)
+            {
+                <td style="background-color: yellow;">
+                    @Html.DisplayFor(modelItem => item.Hole4)
+                </td>
+
+            }
+            else
+            {
+                <td>
+                    @Html.DisplayFor(modelItem => item.Hole4)
+                </td>
+
+            }
+
+            @if (item.Hole5 > 4)
+            {
+                <td style="background-color: red;">
+                    @Html.DisplayFor(modelItem => item.Hole5)
+                </td>
+            }
+            else if (item.Hole5 < 4)
+            {
+                <td style="background-color: yellow;">
+                    @Html.DisplayFor(modelItem => item.Hole5)
+                </td>
+
+            }
+            else
+            {
+                <td>
+                    @Html.DisplayFor(modelItem => item.Hole5)
+                </td>
+
+            }
+
+            @if (item.Hole6 > 4)
+            {
+                <td style="background-color: red;">
+                    @Html.DisplayFor(modelItem => item.Hole6)
+                </td>
+            }
+            else if (item.Hole6 < 4)
+            {
+                <td style="background-color: yellow;">
+                    @Html.DisplayFor(modelItem => item.Hole6)
+                </td>
+
+            }
+            else
+            {
+                <td>
+                    @Html.DisplayFor(modelItem => item.Hole6)
+                </td>
+
+            }
+
+
+
+            @if (item.Hole7 > 3)
+            {
+                <td style="background-color: red;">
+                    @Html.DisplayFor(modelItem => item.Hole7)
+                </td>
+            }
+            else if (item.Hole7 < 3)
+            {
+                <td style="background-color: yellow;">
+                    @Html.DisplayFor(modelItem => item.Hole7)
+                </td>
+
+            }
+            else
+            {
+                <td>
+                    @Html.DisplayFor(modelItem => item.Hole7)
+                </td>
+
+            }
+
+            @if (item.Hole8 > 5)
+            {
+                <td style="background-color: red;">
+                    @Html.DisplayFor(modelItem => item.Hole8)
+                </td>
+            }
+            else if (item.Hole8 < 5)
+            {
+                <td style="background-color: yellow;">
+                    @Html.DisplayFor(modelItem => item.Hole8)
+                </td>
+
+            }
+            else
+            {
+                <td>
+                    @Html.DisplayFor(modelItem => item.Hole8)
+                </td>
+
+            }
+
+            @if (item.Hole9 > 4)
+            {
+                <td style="background-color: red;">
+                    @Html.DisplayFor(modelItem => item.Hole9)
+                </td>
+            }
+            else if (item.Hole9 < 4)
+            {
+                <td style="background-color: yellow;">
+                    @Html.DisplayFor(modelItem => item.Hole9)
+                </td>
+
+            }
+            else
+            {
+                <td>
+                    @Html.DisplayFor(modelItem => item.Hole9)
+                </td>
+
+            }
+
+            @if (item.Hole10 > 3)
+            {
+                <td style="background-color: red;">
+                    @Html.DisplayFor(modelItem => item.Hole10)
+                </td>
+            }
+            else if (item.Hole10 < 3)
+            {
+                <td style="background-color: yellow;">
+                    @Html.DisplayFor(modelItem => item.Hole10)
+                </td>
+
+            }
+            else
+            {
+                <td>
+                    @Html.DisplayFor(modelItem => item.Hole10)
+                </td>
+
+            }
+
+            @if (item.Hole11 > 4)
+            {
+                <td style="background-color: red;">
+                    @Html.DisplayFor(modelItem => item.Hole11)
+                </td>
+            }
+            else if (item.Hole11 < 4)
+            {
+                <td style="background-color: yellow;">
+                    @Html.DisplayFor(modelItem => item.Hole11)
+                </td>
+
+            }
+            else
+            {
+                <td>
+                    @Html.DisplayFor(modelItem => item.Hole11)
+                </td>
+
+            }
+
+            @if (item.Hole12 > 4)
+            {
+                <td style="background-color: red;">
+                    @Html.DisplayFor(modelItem => item.Hole12)
+                </td>
+            }
+            else if (item.Hole12 < 4)
+            {
+                <td style="background-color: yellow;">
+                    @Html.DisplayFor(modelItem => item.Hole12)
+                </td>
+
+            }
+            else
+            {
+                <td>
+                    @Html.DisplayFor(modelItem => item.Hole12)
+                </td>
+
+            }
+
+            @if (item.Hole13 > 4)
+            {
+                <td style="background-color: red;">
+                    @Html.DisplayFor(modelItem => item.Hole13)
+                </td>
+            }
+            else if (item.Hole13 < 4)
+            {
+                <td style="background-color: yellow;">
+                    @Html.DisplayFor(modelItem => item.Hole13)
+                </td>
+
+            }
+            else
+            {
+                <td>
+                    @Html.DisplayFor(modelItem => item.Hole13)
+                </td>
+
+            }
+
+            @if (item.Hole14 > 4)
+            {
+                <td style="background-color: red;">
+                    @Html.DisplayFor(modelItem => item.Hole14)
+                </td>
+            }
+            else if (item.Hole14 < 4)
+            {
+                <td style="background-color: yellow;">
+                    @Html.DisplayFor(modelItem => item.Hole14)
+                </td>
+
+            }
+            else
+            {
+                <td>
+                    @Html.DisplayFor(modelItem => item.Hole14)
+                </td>
+
+            }
+
+
+            @if (item.Hole15 > 4)
+            {
+                <td style="background-color: red;">
+                    @Html.DisplayFor(modelItem => item.Hole15)
+                </td>
+            }
+            else if (item.Hole15 < 4)
+            {
+                <td style="background-color: yellow;">
+                    @Html.DisplayFor(modelItem => item.Hole15)
+                </td>
+
+            }
+            else
+            {
+                <td>
+                    @Html.DisplayFor(modelItem => item.Hole15)
+                </td>
+
+            }
+
+            @if (item.Hole16 > 4)
+            {
+                <td style="background-color: red;">
+                    @Html.DisplayFor(modelItem => item.Hole16)
+                </td>
+            }
+            else if (item.Hole16 < 4)
+            {
+                <td style="background-color: yellow;">
+                    @Html.DisplayFor(modelItem => item.Hole16)
+                </td>
+
+            }
+            else
+            {
+                <td>
+                    @Html.DisplayFor(modelItem => item.Hole16)
+                </td>
+
+            }
+
+            @if (item.Hole17 > 4)
+            {
+                <td style="background-color: red;">
+                    @Html.DisplayFor(modelItem => item.Hole17)
+                </td>
+            }
+            else if (item.Hole17 < 4)
+            {
+                <td style="background-color: yellow;">
+                    @Html.DisplayFor(modelItem => item.Hole17)
+                </td>
+
+            }
+            else
+            {
+                <td>
+                    @Html.DisplayFor(modelItem => item.Hole17)
+                </td>
+
+            }
+            @if (item.Hole18 > 3)
+            {
+                <td style="background-color: red;">
+                    @Html.DisplayFor(modelItem => item.Hole18)
+                </td>
+            }
+            else if (item.Hole18 < 3)
+            {
+                <td style="background-color: yellow;">
+                    @Html.DisplayFor(modelItem => item.Hole18)
+                </td>
+
+            }
+            else
+            {
+                <td>
+                    @Html.DisplayFor(modelItem => item.Hole18)
+                </td>
+
+            }
+            <td style="text-align: right;">
+                @Html.DisplayFor(modelItem => item.Score)
+            </td>
+
             <td>
                 <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a>
             </td>
         </tr>
 }
     </tbody>
 </table>
+
+

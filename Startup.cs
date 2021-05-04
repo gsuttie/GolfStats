@@ -54,7 +54,7 @@ namespace GolfStats
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                    pattern: "{controller=Scores}/{action=Index}/{id?}");
             });
         }
     }
